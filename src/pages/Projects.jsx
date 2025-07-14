@@ -15,72 +15,84 @@ const projects = [
     description: "Tax filing platform built with MERN stack and backend record management.",
     image: "/images/pr1.png",   
     link: "https://thefinshelter.com/",
+    technologies: ["MERN Stack", "Razorpay"]
   },
   {
     title: "TrueSub",
     description: "E-commerce website with custom WordPress coding and multilingual support.",
     image: "/images/pr2.png", 
     link: "https://karhari.sprintbus.ca/",
+    technologies: ["Custom WordPress Coding", "HTML", "PHP"]
   },
   {
     title: "SingleAudio",
     description: "Fully custom WordPress music site with artist uploads and copyright tools.",
     image: "/images/pr3.png",
     link: "https://singleaudio.com/",
+    technologies: ["Custom WordPress Theme", "Custom Coding", "Contact Form"]
   },
   {
     title: "Karhari Media",
     description: "Custom WordPress music platform with dynamic releases and audio player.",
     image: "/images/pr4.png",
     link: "https://karharimedia.com/",
+    technologies: ["Custom WordPress Theme", "Custom Coding", "Contact Form"]
   },
   {
     title: "Inlighntech",
     description: "Course and certification site with WooCommerce and training enrollment.",
     image: "/images/pr5.png",
     link: "https://www.inlighntech.com/",
+    technologies: ["Custom WordPress Plugin", "Certification Logic"]
   },
   {
     title: "Acumen",
     description: "Analytics company website with custom WordPress plugin and forms.",
     image: "/images/pr6.png",
     link: "https://acumendata.io/",
+    technologies: ["Custom WordPress Plugin", "Custom Coding"]
   },
   {
     title: "Life Foundation NGO",
     description: "Donation platform using React with Razorpay and PayPal integration.",
     image: "/images/pr7.png",
     link: "https://lifefoundationhelp.com/",
+    technologies: ["React", "Razorpay", "PayPal Integration"]
   },
   {
     title: "AcademicAssignmentMaster",
     description: "MERN-based education site with dashboards and Razorpay payments.",
     image: "/images/pr8.png",
     link: "https://academicassignmentmaster.co.in/",
+    technologies: ["MERN Stack", "Razorpay"]
   },
   {
     title: "NGO Website",
     description: "NGO Website built using WordPress and using plugins like WPForms Lite.",
     image: "/images/pr9.png",
     link: "https://ggsvidyakendra.com/",
+    technologies: ["WordPress", "Stripe"]
   },
   {
     title: "Nutritionist Website",
     description: "Nutritionist Website built using MERN stack with appointment booking.",
     image: "/images/pr10.png",
     link: "https://arvindsabharwal.onrender.com/",
+    technologies: ["React"]
   },
   {
     title: "Education Website",
     description: "Education Website built using MERN stack with course management.",
     image: "/images/pr11.png",
     link: "https://codingarena.onrender.com/",
+    technologies: ["MERN Stack", "Authentication"]
   },
   {
     title: "Trucking Website",
     description: "Trucking Website built using WordPress and plugins like WPForms Lite.",
     image: "/images/pr12.png",
     link: "https://gunaventerprises.com/",
+    technologies: ["WordPress"]
   },
 ];
 
@@ -303,16 +315,12 @@ const ProjectsComponent = () => {
                     {/* Project Info */}
                     <CardContent sx={{ flexGrow: 1, p: 3 }}>
                       <Typography 
-                        gutterBottom 
                         variant="h5" 
                         component="h3" 
+                        gutterBottom 
                         sx={{ 
-                          fontWeight: 700,
-                          mb: 1,
-                          color: isDarkMode ? '#fff' : '#000',
-                          overflow: 'hidden',
-                          textOverflow: 'ellipsis',
-                          whiteSpace: 'nowrap',
+                          fontWeight: 700, 
+                          color: 'text.primary' 
                         }}
                       >
                         {project.title}
@@ -333,36 +341,25 @@ const ProjectsComponent = () => {
                         {project.description}
                       </Typography>
                       
-                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mt: 1 }}>
-                        {['React', 'Node.js', 'MongoDB'].map((tag, i) => (
-                          index % 4 === i && (
-                            <Chip 
-                              key={tag} 
-                              label={tag} 
-                              size="small" 
-                              color={i % 2 === 0 ? "primary" : "secondary"}
-                              sx={{ 
-                                fontWeight: 500,
-                                fontSize: '0.7rem',
-                                height: 22,
-                              }} 
-                            />
-                          )
-                        ))}
-                        {['WordPress', 'PHP', 'MySQL'].map((tag, i) => (
-                          index % 4 !== i && (
-                            <Chip 
-                              key={tag} 
-                              label={tag} 
-                              size="small" 
-                              color={i % 2 === 0 ? "primary" : "secondary"}
-                              sx={{ 
-                                fontWeight: 500,
-                                fontSize: '0.7rem',
-                                height: 22,
-                              }} 
-                            />
-                          )
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mt: 1, minHeight: '40px' }}>
+                        {project.technologies && project.technologies.map((tech, i) => (
+                          <Chip 
+                            key={i}
+                            label={tech}
+                            size="small"
+                            sx={{
+                              fontSize: '0.7rem',
+                              height: 22,
+                              fontWeight: 500,
+                              bgcolor: isDarkMode ? 'rgba(144, 202, 249, 0.1)' : 'rgba(25, 118, 210, 0.1)',
+                              color: isDarkMode ? '#90caf9' : '#1976d2',
+                              border: '1px solid',
+                              borderColor: isDarkMode ? 'rgba(144, 202, 249, 0.2)' : 'rgba(25, 118, 210, 0.2)',
+                              '& .MuiChip-label': {
+                                px: 1,
+                              },
+                            }}
+                          />
                         ))}
                       </Box>
                     </CardContent>
