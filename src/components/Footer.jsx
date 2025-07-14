@@ -285,7 +285,7 @@ const Footer = () => {
                   </Typography>
                   
                   <Box component="ul" sx={{ p: 0, m: 0, listStyle: 'none' }}>
-                    {['Web Development', 'UI/UX Design', 'Mobile Apps', 'Consulting'].map((item) => (
+                    {['Web Development', 'UI/UX Design', 'Consulting'].map((item) => (
                       <Box component="li" key={item} sx={{ mb: 1.5 }}>
                         <Link
                           component={motion.a}
@@ -346,9 +346,9 @@ const Footer = () => {
               
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
                 {[
-                  { icon: <EmailIcon />, label: 'Email', value: 'info@cybernest.com' },
-                  { icon: <PhoneIcon />, label: 'Phone', value: '+91 1234567890' },
-                  { icon: <LocationOnIcon />, label: 'Address', value: 'New Delhi, India' },
+                  { icon: <EmailIcon />, label: 'Email', value: 'jaisidhu2004@gmail.com' },
+                  { icon: <PhoneIcon />, label: 'Phone', value: '+91 8360703621' },
+                  { icon: <LocationOnIcon />, label: 'Address', value: 'Patiala, Punjab, India' },
                 ].map((item) => (
                   <Box 
                     key={item.label} 

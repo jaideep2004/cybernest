@@ -277,7 +277,7 @@ const TeamComponent = () => {
                           sx={{
                             position: 'absolute',
                             top: -20,
-                            right: -20,
+                            right: -110,
                             width: 60,
                             height: 60,
                             borderRadius: '50%',
@@ -294,7 +294,7 @@ const TeamComponent = () => {
                           {member.icon}
                         </Box>
                         
-                        <Avatar
+                        {/* <Avatar
                           src={member.image}
                           alt={member.name}
                           sx={{
@@ -307,7 +307,7 @@ const TeamComponent = () => {
                             boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
                             zIndex: 2,
                           }}
-                        />
+                        /> */}
                       </Box>
                       
                       <Box sx={{ mt: 2, textAlign: 'center' }}>
@@ -381,7 +381,7 @@ const TeamComponent = () => {
                             </a>
                           )}
                           
-                          {member.social.twitter && (
+                          {/* {member.social.twitter && (
                             <a 
                               href={member.social.twitter}
                               target="_blank"
@@ -402,7 +402,7 @@ const TeamComponent = () => {
                                 <FaInstagram />
                               </IconButton>
                             </a>
-                          )}
+                          )} */}
                           
                           {member.social.email && (
                             <a 
