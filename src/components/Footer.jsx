@@ -156,7 +156,7 @@ const Footer = () => {
                 We create stunning digital experiences with cutting-edge technologies, focusing on beautifully designed and functionally robust solutions.
               </Typography>
               
-              <Box sx={{ display: 'flex', gap: 1, mb: 3 }}>
+              {/* <Box sx={{ display: 'flex', gap: 1, mb: 3 }}>
                 {[
                   { icon: <LinkedInIcon />, color: '#0077B5' },
                   { icon: <GitHubIcon />, color: isDarkMode ? '#fff' : '#333' },
@@ -187,7 +187,7 @@ const Footer = () => {
                     {item.icon}
                   </IconButton>
                 ))}
-              </Box>
+              </Box> */}
             </Grid>
             
             {/* Quick links */}
