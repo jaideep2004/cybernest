@@ -102,48 +102,64 @@ const Home = () => {
         />
       ))}
       
-      {/* Floating Particles */}
-      {[...Array(20)].map((_, i) => (
-        <Box
-          key={`particle-${i}`}
-          component={motion.div}
-          animate={{
-            y: [
-              Math.random() * -100, 
-              Math.random() * 100, 
-              Math.random() * -100
-            ],
-            x: [
-              Math.random() * -100, 
-              Math.random() * 100, 
-              Math.random() * -100
-            ],
-            opacity: [0.3, 0.7, 0.3],
-            scale: [0.8, 1.2, 0.8],
-          }}
-          transition={{
-            duration: 10 + Math.random() * 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          sx={{
-            position: 'absolute',
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            width: `${4 + Math.random() * 8}px`,
-            height: `${4 + Math.random() * 8}px`,
-            borderRadius: '50%',
-            backgroundColor: i % 3 === 0 
-              ? 'primary.main' 
-              : i % 3 === 1 
-                ? 'secondary.main' 
-                : '#4caf50',
-            opacity: 0.3,
-            filter: 'blur(1px)',
-            zIndex: -1,
-          }}
-        />
-      ))}
+      {/* Floating Particles - Reduced on mobile */}
+      {[...Array(typeof window !== 'undefined' && window.innerWidth < 900 ? 8 : 20)].map((_, i) => {
+        const isMobile = typeof window !== 'undefined' && window.innerWidth < 900;
+        const size = 4 + Math.random() * 8;
+        
+        return (
+          <Box
+            key={`particle-${i}`}
+            component={motion.div}
+            initial={{
+              y: Math.random() * (isMobile ? 50 : 100) * (Math.random() > 0.5 ? 1 : -1),
+              x: Math.random() * (isMobile ? 50 : 100) * (Math.random() > 0.5 ? 1 : -1),
+              opacity: 0.3,
+              scale: 0.8
+            }}
+            animate={{
+              y: [
+                Math.random() * (isMobile ? 50 : 100) * (Math.random() > 0.5 ? 1 : -1), 
+                Math.random() * (isMobile ? 50 : 100) * (Math.random() > 0.5 ? 1 : -1), 
+                Math.random() * (isMobile ? 50 : 100) * (Math.random() > 0.5 ? 1 : -1)
+              ],
+              x: [
+                Math.random() * (isMobile ? 50 : 100) * (Math.random() > 0.5 ? 1 : -1), 
+                Math.random() * (isMobile ? 50 : 100) * (Math.random() > 0.5 ? 1 : -1), 
+                Math.random() * (isMobile ? 50 : 100) * (Math.random() > 0.5 ? 1 : -1)
+              ],
+              opacity: [0.2, 0.5, 0.2],
+              scale: [0.8, 1.1, 0.8],
+            }}
+            transition={{
+              duration: isMobile ? 15 + Math.random() * 10 : 10 + Math.random() * 10,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+            sx={{
+              position: 'absolute',
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              width: `${size}px`,
+              height: `${size}px`,
+              borderRadius: '50%',
+              backgroundColor: i % 3 === 0 
+                ? 'primary.main' 
+                : i % 3 === 1 
+                  ? 'secondary.main' 
+                  : '#4caf50',
+              opacity: 0.3,
+              filter: 'blur(1px)',
+              zIndex: -1,
+              willChange: 'transform, opacity',
+              backfaceVisibility: 'hidden',
+              WebkitBackfaceVisibility: 'hidden',
+              transform: 'translateZ(0)',
+              WebkitTransform: 'translateZ(0)',
+            }}
+          />
+        );
+      })}
       
       <Container maxWidth="lg">
         <Grid container spacing={8} alignItems="center" sx={{ justifyContent: { xs: 'center', md: 'space-between' } }}>
@@ -329,7 +345,7 @@ const Home = () => {
                 }}
               />
               
-              {/* Web Development Themed Animation */}
+              {/* Web Development Themed Animation - Optimized for mobile */}
               <Box
                 component={motion.div}
                 sx={{
@@ -339,27 +355,34 @@ const Home = () => {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  transformStyle: 'preserve-3d',
-                  perspective: '1000px',
+                  transformStyle: { xs: 'flat', md: 'preserve-3d' },
+                  perspective: { xs: 'none', md: '1000px' },
+                  willChange: 'transform',
+                  backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
                 }}
               >
-                {/* Orbital Ring - Technologies */}
+                {/* Orbital Ring - Technologies - Simplified on mobile */}
                 <Box
                   component={motion.div}
+                  initial={{ rotateY: 0 }}
                   animate={{
-                    rotateY: [0, 360],
+                    rotateY: 360,
                   }}
                   transition={{
-                    duration: 30,
+                    duration: typeof window !== 'undefined' && window.innerWidth < 900 ? 45 : 30,
                     repeat: Infinity,
-                    ease: "linear",
+                    ease: 'linear',
                   }}
                   sx={{
                     position: 'absolute',
-                    width: { xs: '260px', md: '360px' },
-                    height: { xs: '260px', md: '360px' },
+                    width: { xs: '240px', md: '360px' },
+                    height: { xs: '240px', md: '360px' },
                     borderRadius: '50%',
-                    transformStyle: 'preserve-3d',
+                    transformStyle: { xs: 'flat', md: 'preserve-3d' },
+                    willChange: 'transform',
+                    backfaceVisibility: 'hidden',
+                    WebkitBackfaceVisibility: 'hidden',
                   }}
                 >
                   {technologies.map((tech, index) => {

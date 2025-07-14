@@ -294,20 +294,20 @@ const ContactComponent = () => {
             <ContactInfo 
               icon={<FaEnvelope />} 
               title="Email Us" 
-              content="info@jsportfolio.com" 
+              content="jaisidhu2004@gmail.com" 
             />
             
             <ContactInfo 
               icon={<FaMapMarkerAlt />} 
               title="Our Location" 
-              content="123 Web Dev Street, Digital City, 10001" 
+              content="Patiala" 
               color="secondary" 
             />
             
             <ContactInfo 
               icon={<FaPhone />} 
               title="Call Us" 
-              content="+1 (555) 123-4567" 
+              content="+91 8360703621" 
             />
             
             {/* Social Media Links */}
@@ -320,32 +320,66 @@ const ContactComponent = () => {
               }}
             >
               {[
-                { icon: <FaLinkedin />, color: '#0077B5' },
-                { icon: <FaGithub />, color: isDarkMode ? '#fff' : '#333' },
-                { icon: <FaTwitter />, color: '#1DA1F2' },
-                { icon: <FaInstagram />, color: '#E1306C' },
+                { 
+                  icon: <FaLinkedin />, 
+                  color: '#0077B5',
+                  url: 'https://www.linkedin.com/in/jaideep-2oo4/'
+                },
+                { 
+                  icon: <FaGithub />, 
+                  color: isDarkMode ? '#fff' : '#333',
+                  url: 'https://github.com/jaideep2004'
+                },
+               
+                { 
+                  icon: <FaInstagram />, 
+                  color: '#E1306C',
+                  url: 'https://www.instagram.com/jaisidhu2oo4/'
+                },
+                { 
+                  icon: <FaEnvelope />, 
+                  color: '#E1306C',
+                  onClick: (e) => {
+                    e.preventDefault();
+                    navigator.clipboard.writeText('jaisidhu2004@gmail.com');
+                    setSnackbar({
+                      open: true,
+                      message: 'Email copied to clipboard!',
+                      severity: 'success',
+                    });
+                  }
+                },
+
               ].map((social, i) => (
-                <Box
+                <a 
                   key={i}
-                  component={motion.div}
-                  whileHover={{ y: -5, scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  sx={{ 
-                    width: 40,
-                    height: 40,
-                    borderRadius: '50%',
-                    backgroundColor: isDarkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: social.color,
-                    fontSize: '1.2rem',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s',
-                  }}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none' }}
+                  onClick={social.onClick}
                 >
-                  {social.icon}
-                </Box>
+                  <Box
+                    component={motion.div}
+                    whileHover={{ y: -5, scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    sx={{ 
+                      width: 40,
+                      height: 40,
+                      borderRadius: '50%',
+                      backgroundColor: isDarkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: social.color,
+                      fontSize: '1.2rem',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s',
+                    }}
+                  >
+                    {social.icon}
+                  </Box>
+                </a>
               ))}
             </Box>
           </Grid>

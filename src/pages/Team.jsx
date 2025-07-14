@@ -23,7 +23,8 @@ import {
   FaEnvelope, 
   FaGlobe,
   FaCode,
-  FaPalette
+  FaPalette,
+  FaInstagram
 } from 'react-icons/fa';
 
 // Team members data - Keep only the main 2
@@ -38,10 +39,10 @@ const teamMembers = [
     experience: '3+ years',
     education: 'BVOC in Software Development',
     social: {
-      linkedin: '#',
-      github: '#',
-      twitter: '#',
-      email: 'jaisidhu2004@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/jaideep-2oo4/',
+      github: 'https://github.com/jaideep2004',
+      twitter: 'https://www.instagram.com/jaisidhu2oo4/',
+      email: 'mailto:jaisidhu2004@gmail.com',
     },
     icon: <FaCode />,
     color: 'primary',
@@ -58,7 +59,7 @@ const teamMembers = [
     social: {
       linkedin: '#',
       github: '#',
-      twitter: '#',
+      twitter: 'https://www.instagram.com/kanwal_wanderer/',
       email: 'partner@example.com',
     },
     icon: <FaPalette />,
@@ -335,79 +336,95 @@ const TeamComponent = () => {
                         {/* Social Icons */}
                         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
                           {member.social.linkedin && (
-                            <IconButton 
-                              component={motion.button}
-                              whileHover={{ y: -3, scale: 1.1 }}
-                              whileTap={{ scale: 0.9 }}
-                              size="small"
-                              color={member.color}
+                            <a 
                               href={member.social.linkedin}
                               target="_blank"
                               rel="noopener noreferrer"
-                              sx={{ 
-                                border: '1px solid',
-                                borderColor: member.color === 'primary' ? 'primary.main' : 'secondary.main',
-                              }}
+                              style={{ textDecoration: 'none' }}
                             >
-                              <FaLinkedin />
-                            </IconButton>
+                              <IconButton 
+                                component={motion.button}
+                                whileHover={{ y: -3, scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                size="small"
+                                color={member.color}
+                                sx={{ 
+                                  border: '1px solid',
+                                  borderColor: member.color === 'primary' ? 'primary.main' : 'secondary.main',
+                                }}
+                              >
+                                <FaLinkedin />
+                              </IconButton>
+                            </a>
                           )}
                           
                           {member.social.github && (
-                            <IconButton 
-                              component={motion.button}
-                              whileHover={{ y: -3, scale: 1.1 }}
-                              whileTap={{ scale: 0.9 }}
-                              size="small"
-                              color={member.color}
+                            <a 
                               href={member.social.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              sx={{ 
-                                border: '1px solid',
-                                borderColor: member.color === 'primary' ? 'primary.main' : 'secondary.main',
-                              }}
+                              style={{ textDecoration: 'none' }}
                             >
-                              <FaGithub />
-                            </IconButton>
+                              <IconButton 
+                                component={motion.button}
+                                whileHover={{ y: -3, scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                size="small"
+                                color={member.color}
+                                sx={{ 
+                                  border: '1px solid',
+                                  borderColor: member.color === 'primary' ? 'primary.main' : 'secondary.main',
+                                }}
+                              >
+                                <FaGithub />
+                              </IconButton>
+                            </a>
                           )}
                           
                           {member.social.twitter && (
-                            <IconButton 
-                              component={motion.button}
-                              whileHover={{ y: -3, scale: 1.1 }}
-                              whileTap={{ scale: 0.9 }}
-                              size="small"
-                              color={member.color}
+                            <a 
                               href={member.social.twitter}
                               target="_blank"
                               rel="noopener noreferrer"
-                              sx={{ 
-                                border: '1px solid',
-                                borderColor: member.color === 'primary' ? 'primary.main' : 'secondary.main',
-                              }}
+                              style={{ textDecoration: 'none' }}
                             >
-                              <FaTwitter />
-                            </IconButton>
+                              <IconButton 
+                                component={motion.button}
+                                whileHover={{ y: -3, scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                size="small"
+                                color={member.color}
+                                sx={{ 
+                                  border: '1px solid',
+                                  borderColor: member.color === 'primary' ? 'primary.main' : 'secondary.main',
+                                }}
+                              >
+                                <FaInstagram />
+                              </IconButton>
+                            </a>
                           )}
                           
                           {member.social.email && (
-                            <IconButton 
-                              component={motion.button}
-                              whileHover={{ y: -3, scale: 1.1 }}
-                              whileTap={{ scale: 0.9 }}
-                              size="small"
-                              color={member.color}
+                            <a 
                               href={`mailto:${member.social.email}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              sx={{ 
-                                border: '1px solid',
-                                borderColor: member.color === 'primary' ? 'primary.main' : 'secondary.main',
-                              }}
+                              style={{ textDecoration: 'none' }}
                             >
-                              <FaEnvelope />
-                            </IconButton>
+                              <IconButton 
+                                component={motion.button}
+                                whileHover={{ y: -3, scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                size="small"
+                                color={member.color}
+                                sx={{ 
+                                  border: '1px solid',
+                                  borderColor: member.color === 'primary' ? 'primary.main' : 'secondary.main',
+                                }}
+                              >
+                                <FaEnvelope />
+                              </IconButton>
+                            </a>
                           )}
                         </Box>
                       </Box>

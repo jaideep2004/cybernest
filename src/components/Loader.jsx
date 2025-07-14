@@ -161,7 +161,15 @@ const Loader = () => {
       >
         <LoaderText />
         
-        <Box sx={{ position: 'relative', width: '100%', height: 250, mb: 3 }}>
+        <Box sx={{ 
+          position: 'relative', 
+          width: '100%', 
+          height: 250, 
+          mb: 3,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
           {/* Main animated logo */}
           <Box
             component={motion.div}
@@ -174,15 +182,15 @@ const Loader = () => {
               ease: "linear",
             }}
             style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
+              position: 'relative',
               transformStyle: 'preserve-3d',
               width: 150,
               height: 150,
-              transformOrigin: 'center center',
+              transformOrigin: 'center',
               perspective: 1000,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
             }}
           >
             {/* 3D Cube Faces */}
