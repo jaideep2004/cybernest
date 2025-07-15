@@ -67,12 +67,19 @@ const projects = [
     technologies: ["MERN Stack", "Razorpay"]
   },
   {
-    title: "NGO Website",
-    description: "NGO Website built using WordPress and using plugins like WPForms Lite.",
-    image: "/images/pr9.png",
-    link: "https://ggsvidyakendra.com/",
-    technologies: ["WordPress", "Stripe"]
+    title: "College Portal",
+    description: "MERN-based education site with admin & Student dashboards and Razorpay payments.",
+    image: "/images/pr13.png",
+    link: "https://academicassignmentmaster.co.in/",
+    technologies: ["MERN Stack", "Razorpay","MUI"]
   },
+  // {
+  //   title: "NGO Website",
+  //   description: "NGO Website built using WordPress and using plugins like WPForms Lite.",
+  //   image: "/images/pr9.png",
+  //   link: "https://ggsvidyakendra.com/",
+  //   technologies: ["WordPress", "Stripe"]
+  // },
   {
     title: "Nutritionist Website",
     description: "Nutritionist Website built using MERN stack with appointment booking.",
@@ -87,13 +94,13 @@ const projects = [
     link: "https://codingarena.onrender.com/",
     technologies: ["MERN Stack", "Authentication"]
   },
-  {
-    title: "Trucking Website",
-    description: "Trucking Website built using WordPress and plugins like WPForms Lite.",
-    image: "/images/pr12.png",
-    link: "https://gunaventerprises.com/",
-    technologies: ["WordPress"]
-  },
+  // {
+  //   title: "Trucking Website",
+  //   description: "Trucking Website built using WordPress and plugins like WPForms Lite.",
+  //   image: "/images/pr12.png",
+  //   link: "https://gunaventerprises.com/",
+  //   technologies: ["WordPress"]
+  // },
 ];
 
 const ProjectsComponent = () => {
