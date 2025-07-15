@@ -70,7 +70,7 @@ const projects = [
     title: "College Portal",
     description: "MERN-based education site with admin & Student dashboards and Razorpay payments.",
     image: "/images/pr13.png",
-    link: "https://academicassignmentmaster.co.in/",
+    link: "https://mycollegesitefront.onrender.com/",
     technologies: ["MERN Stack", "Razorpay","MUI"]
   },
   // {
